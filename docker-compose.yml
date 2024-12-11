@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mongodb:
+    container_name: 'mongodb-container'
+    image: 'mongodb:latest'
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=diallodev
+      - MONGODB_INITDB_ROOT_PASSWORD= password
+      - MONGO_INITDB_DATABASE=user_db
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
